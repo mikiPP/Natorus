@@ -1,0 +1,40 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  // This defines what 1rem is 10px
+  font-size: 62.5%;
+
+  // value / 16 = %
+
+  @include responsive(sm){
+    font-size: 56.25%; // 1rem = 9px
+  }
+
+  @include responsive(md){
+    font-size: 50%; // 1rem = 8px
+  }
+
+  @include responsive(lg){
+    font-size: 75%; // 1rem = 12px
+  }
+}
+
+body {
+  box-sizing: border-box;
+  padding: 3rem;
+
+  @include responsive(sm){
+    padding: 0;
+  }
+}
+
+::selection{
+  background-color: $color-primary;
+  color: $color-white;
+}
